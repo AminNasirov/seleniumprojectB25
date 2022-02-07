@@ -91,6 +91,7 @@ public class BasicNavigations {
 
         // this will close all the opened browsers
         driver.quit();
+        // new
 
 
 
