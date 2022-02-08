@@ -1,4 +1,4 @@
-package com.cydeo.tests.Day2_Locators;
+package com.cydeo.tests.day2_Locators;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
