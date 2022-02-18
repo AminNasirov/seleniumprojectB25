@@ -11,7 +11,7 @@ public class HomeWork1 {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();   //Dog dog = new Dog();
         driver.manage().window().maximize();
 
         driver.get("https://www.etsy.com");
