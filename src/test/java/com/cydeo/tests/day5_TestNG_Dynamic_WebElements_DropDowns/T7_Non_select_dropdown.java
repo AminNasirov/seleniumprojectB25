@@ -1,0 +1,52 @@
+package com.cydeo.tests.day5_TestNG_Dynamic_WebElements_DropDowns;
+
+import com.cydeo.tests.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+public class T7_Non_select_dropdown {
+
+    WebDriver driver;
+
+    @BeforeMethod
+    public void setupMethod(){
+        driver= WebDriverFactory.getDriver("chrome");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://practice.cydeo.com/dropdown");
+    }
+
+    @Test
+    public void nonSelectDropdown(){
+
+        WebElement nonSelectDropdown = driver.findElement(By.xpath("//a[@id='dropdownMenuLink']"));
+
+        nonSelectDropdown.click();
+
+        WebElement selectFacebook = driver.findElement(By.xpath("//a[@href='https://www.facebook.com/']"));
+
+        selectFacebook.click();
+
+        String expectedTitle = "Facebook - Log In or Sign Up";
+
+        String currentTittle = driver.getTitle();
+
+        Assert.assertEquals(currentTittle,expectedTitle);
+
+    }
+
+}
+/*
+TC #7: Selecting value from non-select dropdown
+1. Open Chrome browser
+2. Go to https://practice.cydeo.com/dropdown
+3. Click to non-select dropdown
+4. Select Facebook from dropdown
+5. Verify title is “Facebook - Log In or Sign Up”
+ */
