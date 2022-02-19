@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class T1_alert_practice {
+public class T1_T2_T3_alert_practice {
 
     WebDriver driver;
 
@@ -25,6 +25,8 @@ public class T1_alert_practice {
 
     @Test
     public void alertTest1(){
+
+
 
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
         informationAlertButton.click();
