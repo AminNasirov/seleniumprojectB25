@@ -42,6 +42,48 @@ public class T1_alert_practice {
 
 
     }
+    @Test
+    public void alertTest2(){
+
+        WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Confirm']"));
+        informationAlertButton.click();
+
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(resultText.isDisplayed(),"Result text is NOT displayed");
+
+        String expectedText = "You clicked: Cancel";
+        String actualText = resultText.getText();
+
+        Assert.assertEquals(actualText,expectedText,"Actual result text is not as expected!!!");
+
+
+    }
+
+    @Test
+    public void alertTest3(){
+
+        WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Prompt']"));
+        informationAlertButton.click();
+
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("Hello");
+        alert.accept();
+
+        WebElement resultText = driver.findElement(By.xpath("//p[@id='result']"));
+        Assert.assertTrue(resultText.isDisplayed(),"Result text is NOT displayed");
+
+        String expectedText = "You entered: Hello";
+        String actualText = resultText.getText();
+
+        Assert.assertEquals(actualText,expectedText,"Actual result text is not as expected!!!");
+
+
+    }
+
+
 
 
 }
