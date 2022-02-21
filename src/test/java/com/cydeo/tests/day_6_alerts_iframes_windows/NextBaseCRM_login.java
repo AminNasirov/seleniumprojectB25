@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,10 @@ public class NextBaseCRM_login {
         driver.get("https://login2.nextbasecrm.com/");
     }
 
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+    }
 
 
 
@@ -48,7 +53,7 @@ public class NextBaseCRM_login {
     @Test
     public void test3_HR_user_login(){
 
-        driver.getWindowHandle();
+
 
         WebElement userLogin = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
         userLogin.sendKeys("hr70@cydeo.com");
