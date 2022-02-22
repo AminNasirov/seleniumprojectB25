@@ -30,6 +30,8 @@ public class NextBaseCRM_login {
 
 
 
+
+
     @Test
     public void test1_TittleVerify(){
 
@@ -38,6 +40,8 @@ public class NextBaseCRM_login {
 
         Assert.assertEquals(actualTitle,expectedTitle);
     }
+
+
 
     @Test
     public void test2_CheckboxLabelVerify(){
@@ -53,14 +57,13 @@ public class NextBaseCRM_login {
     @Test
     public void test3_HR_user_login(){
 
-
-
         WebElement userLogin = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
         userLogin.sendKeys("hr70@cydeo.com");
         WebElement userPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
         userPassword.sendKeys("UserUser");
         WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
         loginButton.click();
+
 
 
         WebElement userName = driver.findElement(By.xpath("//span[.='Hr70 Cydeo']"));
