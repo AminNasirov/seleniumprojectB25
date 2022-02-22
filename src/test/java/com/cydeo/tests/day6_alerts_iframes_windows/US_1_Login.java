@@ -1,4 +1,4 @@
-package com.cydeo.tests.day_6_alerts_iframes_windows;
+package com.cydeo.tests.day6_alerts_iframes_windows;
 
 import com.cydeo.tests.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -12,12 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class T10 {
+public class US_1_Login {
 
     WebDriver driver;
-
-
-
 
 
     @Test
@@ -34,15 +31,20 @@ public class T10 {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.get("https://login2.nextbasecrm.com/");
+            String expectedTitle = "Authorization";
+            String actualTitle = driver.getTitle();
+            Assert.assertEquals(actualTitle,expectedTitle);
             WebElement userLogin = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
             userLogin.sendKeys(login);
             WebElement userPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
             userPassword.sendKeys("UserUser");
             WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
             loginButton.click();
-            WebElement verifyCRM = driver.findElement(By.xpath("//span[.='CRM']"));
-            Assert.assertTrue(verifyCRM.isDisplayed());
+             expectedTitle = "Portal";
+             actualTitle = driver.getTitle();
+            Assert.assertEquals(actualTitle,expectedTitle);
             driver.close();
+
         }
     }
 
@@ -55,22 +57,24 @@ public class T10 {
         logins.addAll(Arrays.asList("hr70@cydeo.com","invalid@cydeo.com",""));
 
         List<String> passwords = new ArrayList<>();
-        logins.addAll(Arrays.asList("UserUser","invalid123",""));
+        passwords.addAll(Arrays.asList("UserUser","invalid123",""));
 
         for (int i = 0; i < logins.size(); i++) {
+            driver = WebDriverFactory.getDriver("chrome");
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
 
             for (int i1 = 0; i1 < passwords.size(); i1++) {
 
+                String  str = passwords.get(i1);
 
-                driver= WebDriverFactory.getDriver("chrome");
-                driver.manage().window().maximize();
-                driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
                 driver.get("https://login2.nextbasecrm.com/");
                 WebElement userLogin = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
                 userLogin.sendKeys(logins.get(i));
                 WebElement userPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-                userPassword.sendKeys(passwords.get(i1));
-                if(logins.get(i).equals("hr70@cydeo.com")&&passwords.get(i1).equals("UserUser")){
+                userPassword.sendKeys(str);
+                if (logins.get(i).equals("hr70@cydeo.com") && str.equals("UserUser")) {
                     continue;
                 }
                 WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
@@ -81,19 +85,16 @@ public class T10 {
                 String expectedErrorText = "Incorrect login or password";
                 String actualErrorText = errorText.getText();
 
-                Assert.assertEquals(actualErrorText,expectedErrorText);
-                driver.close();
+                Assert.assertEquals(actualErrorText, expectedErrorText);
+
+
 
             }
+            driver.close();
         }
 
 
     }
-
-
-
-
-
 
 
 }
