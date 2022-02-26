@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class T2_Iframe_Practice {
+public class T4_Iframe_Practice {
 
     WebDriver driver;
 

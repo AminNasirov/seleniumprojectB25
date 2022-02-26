@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class T3_Alert_Practice {
+public class T1_Alert_Practice {
 
     WebDriver driver;
 
