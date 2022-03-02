@@ -20,7 +20,7 @@ public class T8_Multiple_Select_Dropdown {
         driver= WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://practice.cydeo.com/dropdown");
+        driver.get("https://login2.nextbasecrm.com/");
     }
 
 

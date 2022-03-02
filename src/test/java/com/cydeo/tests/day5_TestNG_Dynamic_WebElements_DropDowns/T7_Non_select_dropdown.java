@@ -25,7 +25,9 @@ public class T7_Non_select_dropdown {
     @Test
     public void nonSelectDropdown(){
 
-        WebElement nonSelectDropdown = driver.findElement(By.xpath("//a[@id='dropdownMenuLink']"));
+
+
+        WebElement nonSelectDropdown = driver.findElement(By.xpath("//a[@class='btn btn-secondary dropdown-toggle']"));
 
         nonSelectDropdown.click();
 
@@ -35,7 +37,7 @@ public class T7_Non_select_dropdown {
 
         String expectedTitle = "Facebook - Log In or Sign Up";
 
-        String currentTittle = driver.getTitle();
+       String currentTittle = driver.getTitle();
 
         Assert.assertEquals(currentTittle,expectedTitle);
 

@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class T1_Alert_Practice {
@@ -44,6 +45,10 @@ public class T1_Alert_Practice {
 
 
     }
+
+
+
+
 }
 /*
 TC #3: Information alert practice
