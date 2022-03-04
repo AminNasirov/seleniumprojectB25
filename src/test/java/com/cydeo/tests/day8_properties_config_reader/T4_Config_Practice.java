@@ -32,7 +32,7 @@ public class T4_Config_Practice {
 
         WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
 
-        googleSearchBox.sendKeys("apple"+ Keys.ENTER);
+        googleSearchBox.sendKeys(ConfigurationReader.getProperty("searchValue")+ Keys.ENTER);
 
         String expectedTitle = "apple - Google Search";
         String actualTitle = driver.getTitle();
