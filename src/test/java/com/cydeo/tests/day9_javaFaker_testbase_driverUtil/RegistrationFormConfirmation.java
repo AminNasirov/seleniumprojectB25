@@ -55,6 +55,8 @@ public class RegistrationFormConfirmation {
 
         WebElement maleButton = driver.findElement(By.xpath("//input[@value='male']"));
         maleButton.click();
+       // List<WebElement> radioButtons = driver.findElements(By.xpath("//input[@type='radio']"));
+       // radioButtons.get( faker.number().numberBetween(0, 3) ).click();
 
         WebElement birthday = driver.findElement(By.xpath("//input[@name='birthday']"));
 
@@ -62,7 +64,7 @@ public class RegistrationFormConfirmation {
         birthday.sendKeys(date);
 
         Select departments = new Select(driver.findElement(By.xpath("//select[@name='department']")));
-
+       // departments.selectByIndex(faker.number().numberBetween(1,9));
         departments.selectByValue("DE");
 
         Select jobTitle = new Select(driver.findElement(By.xpath("//select[@name='job_title']")));
