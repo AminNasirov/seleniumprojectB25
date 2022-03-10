@@ -37,7 +37,7 @@ public class T4_Scroll_practice {
 }
 /*
 TC #4: Scroll practice
-1- Open a chrome browser
+1- Open a Chrome browser
 2- Go to: https://practice.cydeo.com/
 3- Scroll down to “Powered by CYDEO”
 4- Scroll using Actions class “moveTo(element)” method
