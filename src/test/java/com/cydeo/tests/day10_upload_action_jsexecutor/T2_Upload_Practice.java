@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class T3_Upload_Practice {
+public class T2_Upload_Practice {
 
     @Test
     public void test_upload() {

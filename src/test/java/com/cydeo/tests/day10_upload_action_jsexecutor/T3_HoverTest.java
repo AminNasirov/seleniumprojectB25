@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class T2_HoverTest {
+public class T3_HoverTest {
 
     @Test
     public void test_hovering() {
