@@ -3,6 +3,7 @@ package com.cydeo.tests.day10_upload_action_jsexecutor;
 import com.cydeo.tests.utilities.BrowserUtils;
 import com.cydeo.tests.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -26,13 +27,20 @@ public class T4_Scroll_practice {
         actions.moveToElement(poweredByCydeo).perform();
 
         BrowserUtils.sleep(2);
-        actions.moveToElement(homeLink).perform();
+      //  actions.moveToElement(homeLink).perform();
+        for (int i = 0; i <5 ; i++) {
+            actions.sendKeys(Keys.PAGE_UP).perform();
+        }
+
+       Driver.closeDriver();
 
 
+    }
 
-
-
-
+    @Test
+    public void test2() {
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
     }
 }
 /*

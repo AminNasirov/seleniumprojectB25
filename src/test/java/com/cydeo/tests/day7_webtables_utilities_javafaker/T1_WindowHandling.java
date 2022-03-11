@@ -29,7 +29,7 @@ public class T1_WindowHandling {
         ((JavascriptExecutor) driver).executeScript("window.open('https://etsy.com/','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com/','_blank');");
 
-        BrowserUtils.switchWindowAndVerify(driver,"etsy","Etsy");
+        BrowserUtils.switchWindowAndVerify("etsy","Etsy");
 
 
 
